@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/node_modules/@zappr/plyr/dist/plyr.css" />
+        <link rel="stylesheet" href="/index.css" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+        <title>Zappr HTTP Player</title>
+    </head>
+    <body>
+        <div id="error"></div>
+        <img>
+        <canvas width="512" height="512"></canvas>
+        <video id="plyr" playsinline controls></video>
+        <script src="/node_modules/@zappr/plyr/dist/plyr.min.js"></script>
+        <script src="/node_modules/hls.js/dist/hls.min.js"></script>
+        <script src="/node_modules/dashjs/dist/dash.mediaplayer.min.js"></script>
+        <script src="/node_modules/mpegts.js/dist/mpegts.js"></script>
+        <script type="module" src="/index.js"></script>
+    </body>
+</html>

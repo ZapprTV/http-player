@@ -1,0 +1,155 @@
+html, body {
+    margin: 0;
+    overflow: hidden;
+    font-family: monospace;
+    background: black;
+    color: white;
+}
+#error.active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    font-size: 2.5rem;
+    background: black;
+    padding: 1rem 2rem;
+    width: max-content;
+}
+.plyr, video {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.modal, .modal-content {
+    transition: 500ms all;
+}
+.modal {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+.modal.is-visible {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+.modal.is-visible .modal-content {
+    transform: scale(1);
+}
+.modal-content {
+    transform: scale(0);
+    background: #121212;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    max-width: 80vw;
+}
+.modal-title {
+    display: flex;
+    justify-content: space-between;
+}
+.modal-title h1 {
+    margin: 0;
+}
+.close {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.close::before, .close::after {
+    position: relative;
+    left: 12px;
+    content: ' ';
+    display: block;
+    height: 24px;
+    width: 2px;
+    background-color: #aaa;
+}
+.close:hover::before, .close:hover::after {
+    transition: 500ms all;
+    background: #fff;
+}
+.close::before {
+    transform: rotate(45deg);
+}
+.close::after {
+    top: -24px;
+    transform: rotate(-45deg);
+}
+.technical-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.technical-info h3 {
+    margin: 0;
+}
+.technical-info a {
+    display: flex;
+    background: #000;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.technical-info a.copied::before {
+    content: "";
+    display: flex;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z'/%3E%3C/svg%3E");
+}
+.code {
+    background: #000;
+    padding: 1rem;
+    min-width: 20rem;
+    max-width: 37.5rem;
+    overflow-x: scroll;
+    max-height: 25vh;
+}
+.modal-content i {
+    line-break: anywhere;
+}
+#report-error, .modal-content p {
+    min-width: 20rem;
+    max-width: 37.5rem;
+}
+.modal-buttons {
+    margin-bottom: 0.5rem;
+}
+.button {
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+}
+.button.primary {
+    color: #fff;
+    background: #00b2ff;
+    font-weight: 600;
+}
+.button.secondary {
+    color: #000;
+    background: #f0f8ff;
+    font-weight: 400;
+}
+img {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+canvas {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
