@@ -56,7 +56,9 @@ const name = searchParams.get("name");
 const lcn = searchParams.get("lcn");
 const logo = searchParams.get("logo");
 
-if (url === null) {
+if (new URL(location.href).protocol === "https:") {
+    nonReportableError("ERRORE: Pagina caricata tramite HTTPS.")
+} else if (url === null) {
     nonReportableError("ERRORE: Nessun URL specificato.")
 } else if (name === null && lcn === null) {
     nonReportableError("ERRORE: Nome o LCN del canale non specificati.");
