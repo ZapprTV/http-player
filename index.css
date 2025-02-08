@@ -16,6 +16,7 @@ html, body {
     background: black;
     padding: 1rem 2rem;
     width: max-content;
+    text-align: center;
 }
 .plyr, video {
     width: 100vw;
@@ -152,4 +153,11 @@ canvas {
     width: 0;
     height: 0;
     opacity: 0;
+}
+span {
+    font-size: 1.5rem;
+}
+#error a {
+    font-weight: 700;
+    color: #0088ff;
 }

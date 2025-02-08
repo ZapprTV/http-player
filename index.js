@@ -3,7 +3,7 @@ plyr.on("enterfullscreen", () => screen.orientation.lock("landscape-primary").ca
 plyr.on("exitfullscreen", () => screen.orientation.lock("natural").catch(() => {}));
 const player = document.querySelector("#plyr");
 const nonReportableError = (error) => {
-    document.querySelector("#error").innerText = error;
+    document.querySelector("#error").innerHTML = error;
     document.querySelector("#error").classList.add("active");
 };
 
@@ -57,7 +57,7 @@ const lcn = searchParams.get("lcn");
 const logo = searchParams.get("logo");
 
 if (new URL(location.href).protocol === "https:") {
-    nonReportableError("ERRORE: Pagina caricata tramite HTTPS.")
+    nonReportableError(`ERRORE: Pagina caricata tramite HTTPS.<br><span>Per la visione di questo tipo di canali ti consigliamo di usare il browser <a href="https://www.mozilla.org/it/firefox/new/">Firefox</a>.</span>`)
 } else if (url === null) {
     nonReportableError("ERRORE: Nessun URL specificato.")
 } else if (name === null && lcn === null) {
